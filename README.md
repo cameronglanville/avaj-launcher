@@ -4,12 +4,13 @@ minimal aircraft simulation program, an introduction to the Java world
 ## Compile the project running the commands bellow in the root of the project folder
 
 find -name *.java > sources.txt
-j̶a̶v̶a̶c̶ ̶-̶s̶o̶u̶r̶c̶e̶p̶a̶t̶h̶ ̶@̶s̶o̶u̶r̶c̶e̶s̶.̶t̶x̶t̶
+XX javac -sourcepath @sources.txt XX doesn't work
 javac @sources.txt
 
 ## Running the project
 
-java -cp . com.avaj.Main
+XX java -cp . com.avaj.Main XX seems not needed
+java com.avaj.Main
 
 ## Folder Structure
 
