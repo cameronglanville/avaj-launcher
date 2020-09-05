@@ -10,13 +10,13 @@ javac @sources.txt
 ## Running the project
 
 XX java -cp . com.avaj.Main XX seems not needed
-java avaj.simulator
+java avaj.launcher
 
 ## Folder Structure
 
 The workspace contains:
 
-- `avaj`: the project package
+- `avaj.launcher`: the project package
 
 ## Dependency Management
 

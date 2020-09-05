@@ -1,4 +1,4 @@
-package avaj.aircrafts;
+package avaj.launcher;
 
 public class Coordinates {
     private int longitude;
