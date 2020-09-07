@@ -3,20 +3,27 @@ minimal aircraft simulation program, an introduction to the Java world
 
 ## Compile the project running the commands bellow in the root of the project folder
 
-find -name *.java > sources.txt
-XX javac -sourcepath @sources.txt XX doesn't work
-javac @sources.txt
+- find -name *.java > sources.txt
+- // javac -sourcepath @sources.txt // doesn't work
+- javac @sources.txt
 
 ## Running the project
 
-XX java -cp . com.avaj.Main XX seems not needed
-java avaj.launcher
+- // java -cp . com.avaj.Main // seems not needed
+- java avaj.launcher
 
 ## Folder Structure
 
 The workspace contains:
 
 - `avaj.launcher`: the project package
+
+## Info
+
+- first line: number of times the simulatoin is run
+- second line desribes the aircraft: TYPE NAME LONGITUDE LATITUDE HEIGHT
+- aircrafts have 3 types: JetPlane Helicopter Baloon
+- weather can be one of 4: RAIN FOG SUN SNOW
 
 ## Dependency Management
 
