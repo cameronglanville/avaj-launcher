@@ -5,7 +5,7 @@ public abstract class Aircraft {
     protected long id;
     protected String name;
     protected Coordinates coordinates;
-    private static long idCounter;
+    private static long idCounter; //starts at 0, will save the id and the number of aircrafts are initially registered
 
     protected Aircraft(String name, Coordinates coordinates) {
         this.id = nextId();

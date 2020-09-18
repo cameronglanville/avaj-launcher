@@ -9,7 +9,7 @@ public class JetPlane extends Aircraft implements Flyable {
     }
 
     public void updateConditions() {
-        String weather = weatherTower.getWeather(coordinates);
+        String weather = weatherTower.getWeather(this.coordinates);
 
         if (weather.equals("SUN")) {
             this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude() + 10, this.coordinates.getHeight() + 2);
@@ -22,8 +22,9 @@ public class JetPlane extends Aircraft implements Flyable {
         }
     }
 
-    public void registerTower(WeatherTower WeatherTower) {
-        // TODO Auto-generated method stub
+    public void registerTower(WeatherTower weatherTower) {
+        this.weatherTower = weatherTower;
+        this.weatherTower.register(this);
     }
 
 }
