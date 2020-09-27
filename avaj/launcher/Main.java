@@ -11,6 +11,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         WeatherTower weatherTower = new WeatherTower();
+        Printer.openFile("simulation.txt");
 
         //check for the correct number of arguments
         if (args.length == 0) {
