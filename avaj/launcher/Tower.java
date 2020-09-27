@@ -5,7 +5,7 @@ import java.util.*;
 public abstract class Tower {
 
     //private List<Flyable> observers = new ArrayList<Flyable>(); if I need to initialize
-    private List<Flyable> observers;
+    private List<Flyable> observers = new ArrayList<Flyable>();
 
     public void register(Flyable flyable) {
         observers.add(flyable); // may need more

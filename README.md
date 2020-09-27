@@ -8,8 +8,7 @@ minimal aircraft simulation program, an introduction to the Java world
 
 ## Running the project
 
-- // java -cp . com.avaj.Main // seems not needed
-- java avaj.launcher.Main
+- java avaj.launcher.Main scenario.txt
 
 ## Folder Structure
 
