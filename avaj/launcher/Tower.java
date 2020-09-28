@@ -1,11 +1,11 @@
 package avaj.launcher;
 
-import java.util.*;
+import java.util.ArrayList;
 
 public abstract class Tower {
 
     //private List<Flyable> observers = new ArrayList<Flyable>(); if I need to initialize
-    private List<Flyable> observers = new ArrayList<Flyable>();
+    private ArrayList<Flyable> observers = new ArrayList<Flyable>();
 
     public void register(Flyable flyable) {
         observers.add(flyable); // may need more
@@ -16,7 +16,7 @@ public abstract class Tower {
     }
 
     protected void conditionsChanged() {
-        for (int i = 0; i < observers.size(); i++) {
+        for (int i = observers.size() - 1; i >= 0; i--) {
             observers.get(i).updateConditions();
         }
     }

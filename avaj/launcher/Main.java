@@ -108,21 +108,30 @@ public class Main {
             switch (temp[0]) {
                 case "JetPlane": {
                     new JetPlane(temp[1], new Coordinates(Integer.parseInt(temp[2]), Integer.parseInt(temp[3]), Integer.parseInt(temp[4]))).registerTower(weatherTower);
+                    break;
                 }
                 case "Helicopter": {
                     new Helicopter(temp[1], new Coordinates(Integer.parseInt(temp[2]), Integer.parseInt(temp[3]), Integer.parseInt(temp[4]))).registerTower(weatherTower);
+                    break;
                 }
                 case "Baloon": {
                     new Baloon(temp[1], new Coordinates(Integer.parseInt(temp[2]), Integer.parseInt(temp[3]), Integer.parseInt(temp[4]))).registerTower(weatherTower);
+                    break;
                 }
             }
             line = bufferReader.readLine();
         }
 
-        
+        int i = 0;
 
-        System.out.println("Yay, you got to the end!");
+        while (i < times) {
+            weatherTower.changeWeather();
+            i++;
+        }
+
+        Printer.closeFile();
         bufferReader.close();
         fileReader.close();
+        System.out.println("Yay, you got to the end!");
     }
 }
