@@ -2,10 +2,6 @@ package avaj.launcher;
 
 import java.io.FileReader;
 import java.io.BufferedReader;
-// import java.lang.Math;
-// import java.io.File;
-// import java.io.FileWriter;
-// import java.io.BufferedWriter;
 
 public class Main {
 
@@ -17,7 +13,7 @@ public class Main {
         if (args.length == 0) {
             throw new Exception("Please pass avaj launcher a scenario");
         } else if (args.length > 1) {
-            throw new Exception("Too many arguments");
+            throw new Exception("You have passed too many arguments");
         }
 
         //try to open the file passed as an argument
@@ -25,7 +21,7 @@ public class Main {
         try {
             fileReader = new FileReader("./" + args[0]);
         } catch(Exception e) {
-            throw new Exception("Bad input");
+            throw new Exception("That is not a valid file");
         }
 
         //use read the file line by line
@@ -39,7 +35,7 @@ public class Main {
         } catch(Exception e) {
             bufferReader.close();
             fileReader.close();
-            throw new Exception("Bad first line: \"" + line + "\"");
+            throw new Exception("Bad first line, expecting a number: \"" + line + "\"");
         }
         if (times <= 0) {
             bufferReader.close();
@@ -63,7 +59,7 @@ public class Main {
             if (!temp[0].equals("JetPlane") && !temp[0].equals("Helicopter") && !temp[0].equals("Baloon")) {
                 bufferReader.close();
                 fileReader.close();
-                throw new Exception("Unrecognised type: \"" + temp[0] + "\"");
+                throw new Exception("Unrecognised type: \"" + temp[0] + "\" on line: \"" + line + "\"");
             }
             //check name ?
             //check longitude
@@ -72,12 +68,12 @@ public class Main {
             } catch(Exception e) {
                 bufferReader.close();
                 fileReader.close();
-                throw new Exception("longitude is not a number: \"" + temp[2] + "\"");
+                throw new Exception("longitude is not a number: \"" + temp[2] + "\" on line: \"" + line + "\"");
             }
             if (number <= 0) {
                 bufferReader.close();
                 fileReader.close();
-                throw new Exception("longitude is not a positive number: \"" + temp[2] + "\"");
+                throw new Exception("longitude is not a positive number: \"" + temp[2] + "\" on line: \"" + line + "\"");
             }
             //check latitude
             try {
@@ -85,12 +81,12 @@ public class Main {
             } catch(Exception e) {
                 bufferReader.close();
                 fileReader.close();
-                throw new Exception("latitude is not a number: \"" + temp[3] + "\"");
+                throw new Exception("latitude is not a number: \"" + temp[3] + "\" on line: \"" + line + "\"");
             }
             if (number <= 0) {
                 bufferReader.close();
                 fileReader.close();
-                throw new Exception("latitude is not a positive number: \"" + temp[3] + "\"");
+                throw new Exception("latitude is not a positive number: \"" + temp[3] + "\" on line: \"" + line + "\"");
             }
             //check height
             try {
@@ -98,13 +94,14 @@ public class Main {
             } catch(Exception e) {
                 bufferReader.close();
                 fileReader.close();
-                throw new Exception("height is not a number: \"" + temp[4] + "\"");
+                throw new Exception("height is not a number: \"" + temp[4] + "\" on line: \"" + line + "\"");
             }
             if (number < 0) {
                 bufferReader.close();
                 fileReader.close();
-                throw new Exception("height is not valid: \"" + temp[4] + "\"");
+                throw new Exception("height is not valid: \"" + temp[4] + "\" on line: \"" + line + "\"");
             }
+            //create and register the aircrafts
             switch (temp[0]) {
                 case "JetPlane": {
                     new JetPlane(temp[1], new Coordinates(Integer.parseInt(temp[2]), Integer.parseInt(temp[3]), Integer.parseInt(temp[4]))).registerTower(weatherTower);
@@ -122,8 +119,8 @@ public class Main {
             line = bufferReader.readLine();
         }
 
+        //change the weather specified times
         int i = 0;
-
         while (i < times) {
             weatherTower.changeWeather();
             i++;
@@ -132,6 +129,6 @@ public class Main {
         Printer.closeFile();
         bufferReader.close();
         fileReader.close();
-        System.out.println("Yay, you got to the end!");
+        // System.out.println("Yay, you got to the end!");
     }
 }

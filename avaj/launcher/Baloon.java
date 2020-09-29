@@ -13,16 +13,16 @@ public class Baloon extends Aircraft implements Flyable {
 
         if (weather.equals("SUN")) {
             this.coordinates = new Coordinates(this.coordinates.getLongitude() + 2, this.coordinates.getLatitude(), this.coordinates.getHeight() + 4);
-            Printer.printLine("Baloon#" + this.name + "(" + this.id + "): it is hot, we are going far.");
+            Printer.printLine("Baloon#" + this.name + "(" + this.id + "): The sun is making the air so hot! Gonna get some serious height with this.");
         } else if (weather.equals("RAIN")) {
             this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 5);
-            Printer.printLine("Baloon#" + this.name + "(" + this.id + "): it is raining, gliding alone just fine.");
+            Printer.printLine("Baloon#" + this.name + "(" + this.id + "): It is raining on our parade, down we go.");
         } else if (weather.equals("FOG")) {
             this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 3);
-            Printer.printLine("Baloon#" + this.name + "(" + this.id + "): foggy, but we are still going on.");
+            Printer.printLine("Baloon#" + this.name + "(" + this.id + "): This fog isn'r helping, going to have to get lower.");
         } else if (weather.equals("SNOW")) {
             this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 15);
-            Printer.printLine("Baloon#" + this.name + "(" + this.id + "): snow, the rotors can't take much more of this.");
+            Printer.printLine("Baloon#" + this.name + "(" + this.id + "): Damn snow, better get down before we crash.");
         }
 
         if (this.coordinates.getHeight() == 0) {

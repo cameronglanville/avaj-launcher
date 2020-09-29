@@ -22,7 +22,3 @@ The workspace contains:
 - second line desribes the aircraft: TYPE NAME LONGITUDE LATITUDE HEIGHT
 - aircrafts have 3 types: JetPlane Helicopter Baloon
 - weather can be one of 4: RAIN FOG SUN SNOW
-
-## Dependency Management
-
-The `JAVA DEPENDENCIES` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-pack/blob/master/release-notes/v0.9.0.md#work-with-jar-files-directly).

@@ -13,16 +13,16 @@ public class Helicopter extends Aircraft implements Flyable {
 
         if (weather.equals("SUN")) {
             this.coordinates = new Coordinates(this.coordinates.getLongitude() + 10, this.coordinates.getLatitude(), this.coordinates.getHeight() + 2);
-            Printer.printLine("Helicopter#" + this.name + "(" + this.id + "): it is hot, we are going far.");
+            Printer.printLine("Helicopter#" + this.name + "(" + this.id + "): The sun is shining, it's a great day to see the sights.");
         } else if (weather.equals("RAIN")) {
             this.coordinates = new Coordinates(this.coordinates.getLongitude() + 5, this.coordinates.getLatitude(), this.coordinates.getHeight());
-            Printer.printLine("Helicopter#" + this.name + "(" + this.id + "): it is raining, gliding alone just fine.");
+            Printer.printLine("Helicopter#" + this.name + "(" + this.id + "): The rain has come, this is fine.");
         } else if (weather.equals("FOG")) {
             this.coordinates = new Coordinates(this.coordinates.getLongitude() + 1, this.coordinates.getLatitude(), this.coordinates.getHeight());
-            Printer.printLine("Helicopter#" + this.name + "(" + this.id + "): foggy, but we are still going on.");
+            Printer.printLine("Helicopter#" + this.name + "(" + this.id + "): Damn fog, I can hardly see where I am going.");
         } else if (weather.equals("SNOW")) {
             this.coordinates = new Coordinates(this.coordinates.getLongitude(), this.coordinates.getLatitude(), this.coordinates.getHeight() - 12);
-            Printer.printLine("Helicopter#" + this.name + "(" + this.id + "): snow, the rotors can't take much more of this.");
+            Printer.printLine("Helicopter#" + this.name + "(" + this.id + "): The snow is too cold! The rotors can't take much more of this.");
         }
 
         if (this.coordinates.getHeight() == 0) {
