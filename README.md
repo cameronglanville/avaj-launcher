@@ -16,9 +16,9 @@ The workspace contains:
 
 - `avaj.launcher`: the project package
 
-## Info
+## Info: scenario structure
 
-- first line: number of times the simulatoin is run
-- second line desribes the aircraft: TYPE NAME LONGITUDE LATITUDE HEIGHT
-- aircrafts have 3 types: JetPlane Helicopter Baloon
-- weather can be one of 4: RAIN FOG SUN SNOW
+- first line: number of times the simulatoin is run, must be positive
+- lines after the first desribe the aircrafts: TYPE NAME LONGITUDE LATITUDE HEIGHT
+- aircrafts have three types: JetPlane Helicopter Baloon
+- weather can be one of four: RAIN FOG SUN SNOW
